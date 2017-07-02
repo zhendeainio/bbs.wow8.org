@@ -1,6 +1,6 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied');
 
-$forum_last_posts = C::t('forum_post')->fetch_last_posts('', 30);
+$forum_last_posts = C::t('forum_post')->fetch_last_visible_posts('', 30);
 
 $last_tids = [];
 foreach ($forum_last_posts as $forum_last_post) $last_tids[] = $forum_last_post['tid'];
