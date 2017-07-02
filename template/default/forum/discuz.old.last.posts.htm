@@ -11,12 +11,15 @@
         <!--{eval $fid = $thread[fid]}-->
         <!--{eval $forum_name = $forum_last_posts_forums[$fid][name]}-->
         <!--{eval $replier = $post[author]}-->
+        <!--{eval $replierId = $post[authorid]}-->
         <!--{eval $message = $post[message]}-->
+        <!--{eval $first = $post[first]}-->
         <!--{if strlen($message) > 200}-->
         <!--{eval $message = substr($message, 0, 197) . '...'}-->
         <!--{/if}-->
         <div class="lp">
-            <div>[<b><a href="/forum.php?mod=forumdisplay&fid=$fid">$forum_name</a></b>]<a href="/forum.php?mod=viewthread&tid=$thread[tid]">$thread[subject]</a> @ $replier <b>{echo dgmdate($post[dateline], 'u', '9999', getglobal('setting/dateformat'))}</b></div>
+            <a href="/?$replierId"><!--{avatar($replierId,small)}--></a>
+            <div>[<b><a href="/forum.php?mod=forumdisplay&fid=$fid">$forum_name</a></b>]<!--{if $first}-->[<b>New!</b>]<!--{/if}--><a href="/forum.php?mod=viewthread&tid=$thread[tid]">$thread[subject]</a> <a href="/?$replierId">@$replier</a> <b>{echo dgmdate($post[dateline], 'u', '9999', getglobal('setting/dateformat'))}</b></div>
             <div class="pt5">$message</div>
         </div>
         <!--{/loop}-->

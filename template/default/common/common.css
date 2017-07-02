@@ -1888,6 +1888,12 @@ DIYÍ¼Æ¬»ÃµÆÆ¬Î´¼ÓÔØÊ±Òş²Ø,Ä£¿é±êÊ¶Òş²Ø
 			padding-top: 5px;
 		}
 
+		.lp img {
+			float: left;
+			padding-right: 5px;
+			border-radius: 50px;
+		}
+
 		table.recent-thread-table tr td {
 			border-style: hidden;
 			padding: 5px 10px;
