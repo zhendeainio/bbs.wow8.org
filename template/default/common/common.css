@@ -1884,7 +1884,7 @@ DIY图片幻灯片未加载时隐藏,模块标识隐藏
 			padding-bottom: 10px;
 		}
 
-		.lp .pt5 {
+		.lp div:nth-of-type(2) {
 			padding-top: 5px;
 		}
 

@@ -19,8 +19,8 @@
         <!--{/if}-->
         <div class="lp">
             <a href="/?$replierId"><!--{avatar($replierId,small)}--></a>
-            <div>[<b><a href="/forum.php?mod=forumdisplay&fid=$fid">$forum_name</a></b>]<!--{if $first}-->[<b>New!</b>]<!--{/if}--><a href="/forum.php?mod=viewthread&tid=$thread[tid]">$thread[subject]</a> <a href="/?$replierId">@$replier</a> <b>{echo dgmdate($post[dateline], 'u', '9999', getglobal('setting/dateformat'))}</b></div>
-            <div class="pt5">$message</div>
+            <div><!--{if $first}-->[<b>New!</b>]<!--{/if}-->[<b><a href="/forum.php?mod=forumdisplay&fid=$fid">$forum_name</a></b>]<a href="/forum.php?mod=viewthread&tid=$thread[tid]">$thread[subject]</a> <a href="/?$replierId">@$replier</a> <b>{echo dgmdate($post[dateline], 'u', '9999', getglobal('setting/dateformat'))}</b></div>
+            <div>$message</div>
         </div>
         <!--{/loop}-->
     </div>
