@@ -1,0 +1,40 @@
+<?php
+$colorjs=array( // for replace colors
+	'r'=>array(
+		'<span class="sjhtype">',
+		'<span class="sjhkeyword">',
+		'<span class="sjhnative">',
+		'<span class="sjhconst">',
+		'<span class="sjhstring">',
+		'<span class="sjhcomment">',
+		'<span class="sjhnumber">',
+		'<span class="sjhtitle">//',
+		'</span>',
+		'</span>',
+		'</span>',
+		'</span>',
+		'</span>',
+		'</span>',
+		'</span>',
+		'</span>',
+	),
+	's'=>array(
+		'@tys@',
+		'@kes@',
+		'@nas@',
+		'@css@',
+		'@sts@',
+		'@cms@',
+		'@nus@',
+		'@tis@',
+		'@tye@',
+		'@kee@',
+		'@nae@',
+		'@cse@',
+		'@ste@',
+		'@cme@',
+		'@nue@',
+		'@tie@',
+	)
+);
+?>

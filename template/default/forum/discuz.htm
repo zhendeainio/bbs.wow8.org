@@ -1,0 +1,7 @@
+<!--{if isset($_GET['DEBUG'])}-->
+	<!--{template forum/lazy/discuz}-->
+<!--{elseif isset($_GET['gate'])}-->
+    <!--{template forum/discuz.gate}-->
+<!--{else}-->
+	<!--{template forum/discuz.old}-->
+<!--{/if}-->

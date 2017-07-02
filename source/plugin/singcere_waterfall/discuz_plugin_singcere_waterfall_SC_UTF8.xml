@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="version"><![CDATA[X2.5,X3,X3.1,X3.2]]></item>
+	<item id="Time"><![CDATA[2015-06-19 09:06]]></item>
+	<item id="From"><![CDATA[caishijue ]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[S! waterfall_layout]]></item>
+			<item id="identifier"><![CDATA[singcere_waterfall]]></item>
+			<item id="description"><![CDATA[全新体验, 为站点增加瀑布流的看帖方式.]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[singcere_waterfall/]]></item>
+			<item id="copyright"><![CDATA[记事本|www.cwww.wfdsoft.com]]></item>
+			<item id="version"><![CDATA[6.2]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[singcere_app]]></item>
+					<item id="menu"><![CDATA[S! 荣誉出品]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[stroll]]></item>
+					<item id="menu"><![CDATA[随便逛逛]]></item>
+					<item id="url"><![CDATA[plugin.php?id=singcere_waterfall]]></item>
+					<item id="type"><![CDATA[1]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[hook]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X2.5,X3,X3.1,X3.2]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[显示样式]]></item>
+				<item id="description"><![CDATA[正确设置样式, 避免与站点风格冲突]]></item>
+				<item id="variable"><![CDATA[wf_style]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[0=固定窄版
+1=固定宽版]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[瀑布流初始加载个数]]></item>
+				<item id="description"><![CDATA[进入页面首次加载的帖子数.]]></item>
+				<item id="variable"><![CDATA[wf_init_num]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[30]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[瀑布流分段数]]></item>
+				<item id="description"><![CDATA[瀑布流单页ajax加载的次数, 超过后显示分页]]></item>
+				<item id="variable"><![CDATA[wf_spart_num]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[4]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[瀑布流单页加载总个数]]></item>
+				<item id="description"><![CDATA[分页内加载个数, 不得低于初始加载个数.]]></item>
+				<item id="variable"><![CDATA[wf_perpage]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[100]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[自定义标签]]></item>
+				<item id="description"><![CDATA[自定义选择的标签
+每行代表一个标签]]></item>
+				<item id="variable"><![CDATA[wf_custom_tag]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[美食
+旅游
+星座
+新浪
+土豆]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[转播按钮名称]]></item>
+				<item id="description"><![CDATA[填写转播按钮显示文字 (为空则不显示)]]></item>
+				<item id="variable"><![CDATA[block_btn_relay]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="6">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[喜欢按钮名称]]></item>
+				<item id="description"><![CDATA[填写喜欢按钮显示文字 (为空则不显示)]]></item>
+				<item id="variable"><![CDATA[block_btn_like]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[喜欢]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="7">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[淘贴按钮名称]]></item>
+				<item id="description"><![CDATA[填写淘贴按钮显示文字 (为空则不显示)]]></item>
+				<item id="variable"><![CDATA[block_btn_coll]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[淘]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="8">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[回复按钮名称]]></item>
+				<item id="description"><![CDATA[填写回复按钮显示文字 (为空则不显示)]]></item>
+				<item id="variable"><![CDATA[block_btn_reply]]></item>
+				<item id="type"><![CDATA[text]]></item>
+				<item id="value"><![CDATA[回复]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="9">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[数据块回复数]]></item>
+				<item id="description"><![CDATA[获取帖子的回复量. 
+0为不获取回复列表, 获取回复将增加服务器查询负担.]]></item>
+				<item id="variable"><![CDATA[block_reply_num]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="10">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[热度最低值]]></item>
+				<item id="description"><![CDATA[帖子热度最低值, 大于该值的帖子将被<最热>所检索到, 建议与论坛主题热度设置相同]]></item>
+				<item id="variable"><![CDATA[view_hot_value]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="11">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[开启横栏筛选]]></item>
+				<item id="description"><![CDATA[开启后, 顶部提供 板块, 等级, 主题类型等筛选.]]></item>
+				<item id="variable"><![CDATA[wf_forum_filter_on]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="12">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[指定板块]]></item>
+				<item id="description"><![CDATA[选中的板块才会被检索到, 并且无论是否是图片模式均生成缩略图]]></item>
+				<item id="variable"><![CDATA[wf_forum_limit]]></item>
+				<item id="type"><![CDATA[forums]]></item>
+				<item id="extra"><![CDATA[]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[2]]></item>
+				</item>
+			</item>
+			<item id="13">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[解析特殊主题数据]]></item>
+				<item id="description"><![CDATA[解析商品, 活动等特殊主题的数据. 具有额外的风格样式.
+解析将增加服务器查询负担.]]></item>
+				<item id="variable"><![CDATA[block_special_data_on]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="14">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[回复解析附件数据]]></item>
+				<item id="description"><![CDATA[回复列表解析附件, 对性能影响较大
+建议关闭]]></item>
+				<item id="variable"><![CDATA[block_attach_on]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="15">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[仅含缩略图]]></item>
+				<item id="description"><![CDATA[筛选带有缩略图的数据. 为否时, 将交给前端由用户控制
+特殊主题<商品>, <活动>, <投票>等主题不受此限制]]></item>
+				<item id="variable"><![CDATA[block_must_cover_on]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="16">
+				<item id="displayorder"><![CDATA[7]]></item>
+				<item id="title"><![CDATA[显示灰色背景]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[wf_bg]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="17">
+				<item id="displayorder"><![CDATA[10]]></item>
+				<item id="title"><![CDATA[masonry预读]]></item>
+				<item id="description"><![CDATA[1. 服务器预读高度将增加服务器端执行时间, 但客户端js执行速度最快,页面布局效果最稳定.
+2. 客户端解析高度, 依赖访客网络环境以及浏览器渲染速度. 对低版本浏览器或网络带宽低的访客体验较差.]]></item>
+				<item id="variable"><![CDATA[masonry_preread]]></item>
+				<item id="type"><![CDATA[select]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[0=客户端解析高度
+1=服务器预读高度]]></item>
+			</item>
+			<item id="18">
+				<item id="displayorder"><![CDATA[11]]></item>
+				<item id="title"><![CDATA[显示回顶部按钮]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[wf_top]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="19">
+				<item id="displayorder"><![CDATA[12]]></item>
+				<item id="title"><![CDATA[手机版是否调用头部模板]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[touch_open]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="gid_no_open"><![CDATA[您访问的分区尚未在插件中开启]]></item>
+				<item id="fid_no_open"><![CDATA[您访问的板块尚未在插件中开启]]></item>
+				<item id="reply_success"><![CDATA[回复成功]]></item>
+				<item id="video_not_found"><![CDATA[未找到相关视频 <a target="_blank" href="{url}"> 查看原帖 </a>]]></item>
+				<item id="post_edit_succeed"><![CDATA[帖子编辑成功, 现在将转入主题页, 请稍后  ...<br /><a href="forum.php?mod=forumdisplay&fid={fid}">点击进入主题列表</a>{coverimg}]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="loading"><![CDATA[努力的加载中]]></item>
+				<item id="loading_all"><![CDATA[加载更多]]></item>
+				<item id="timeout"><![CDATA[服务器没有响应！]]></item>
+				<item id="video_not_found"><![CDATA[未找到相关视频]]></item>
+				<item id="video"><![CDATA[视频播放]]></item>
+				<item id="video_enter"><![CDATA[进入帖子查看]]></item>
+				<item id="all"><![CDATA[全部]]></item>
+				<item id="unlimited"><![CDATA[不限]]></item>
+				<item id="hottag"><![CDATA[热门标签]]></item>
+				<item id="hide"><![CDATA[隐藏]]></item>
+				<item id="close"><![CDATA[关闭]]></item>
+				<item id="havecover"><![CDATA[只看有图]]></item>
+				<item id="notonlycover"><![CDATA[查看全部]]></item>
+				<item id="thread_top"><![CDATA[置顶]]></item>
+				<item id="thread_digest"><![CDATA[精华]]></item>
+				<item id="thread_hot"><![CDATA[热门]]></item>
+				<item id="thread_havenewreply"><![CDATA[有新回复]]></item>
+				<item id="thread_special1"><![CDATA[投票]]></item>
+				<item id="thread_special2"><![CDATA[商品]]></item>
+				<item id="thread_special3"><![CDATA[悬赏]]></item>
+				<item id="thread_special4"><![CDATA[活动]]></item>
+				<item id="thread_special5"><![CDATA[辩论]]></item>
+				<item id="thread_displayorder1"><![CDATA[本版置顶主题]]></item>
+				<item id="thread_displayorder2"><![CDATA[分类置顶主题]]></item>
+				<item id="thread_displayorder3"><![CDATA[全局置顶主题]]></item>
+				<item id="thread_displayorder4"><![CDATA[多板置顶主题]]></item>
+				<item id="thread_txt_move"><![CDATA[移动]]></item>
+				<item id="thread_txt_robpost"><![CDATA[抢楼]]></item>
+				<item id="thread_txt_cost"><![CDATA[售价]]></item>
+				<item id="thread_txt_reward"><![CDATA[悬赏]]></item>
+				<item id="thread_txt_resolved"><![CDATA[已解决]]></item>
+				<item id="thread_txt_evaluatelevel"><![CDATA[评价指数]]></item>
+				<item id="thread_txt_hotlevel"><![CDATA[级热门]]></item>
+				<item id="thread_txt_extrapoint"><![CDATA[帖子被加分]]></item>
+				<item id="thread_txt_lesspoint"><![CDATA[帖子被减分]]></item>
+				<item id="thread_txt_replyreward"><![CDATA[回帖奖励]]></item>
+				<item id="thread_txt_goodsname"><![CDATA[商品名称]]></item>
+				<item id="thread_txt_goodsnum"><![CDATA[商品数量]]></item>
+				<item id="thread_txt_goodscost"><![CDATA[商品价格]]></item>
+				<item id="thread_txt_goodstime"><![CDATA[剩余时间]]></item>
+				<item id="thread_txt_goodsday"><![CDATA[天]]></item>
+				<item id="thread_txt_goodshour"><![CDATA[小时]]></item>
+				<item id="thread_txt_activitytype"><![CDATA[活动类型]]></item>
+				<item id="thread_txt_activitystart"><![CDATA[开始时间]]></item>
+				<item id="thread_txt_activitywhere"><![CDATA[活动地点]]></item>
+				<item id="thread_txt_activitycost"><![CDATA[每人花销]]></item>
+				<item id="thread_txt_activityapply"><![CDATA[已报名]]></item>
+				<item id="thread_txt_activitymember"><![CDATA[人]]></item>
+				<item id="thread_txt_debateaffirmpoint"><![CDATA[正方观点]]></item>
+				<item id="thread_txt_debatenegapoint"><![CDATA[反方观点]]></item>
+				<item id="thread_txt_poston"><![CDATA[发表于]]></item>
+				<item id="thread_txt_viewreplies"><![CDATA[查看全部$thread[replies]条评论...]]></item>
+				<item id="thread_data_video"><![CDATA[视频]]></item>
+				<item id="thread_data_audio"><![CDATA[音乐]]></item>
+			</item>
+		</item>
+	</item>
+</root>

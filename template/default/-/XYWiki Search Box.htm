@@ -1,0 +1,13 @@
+<div style="margin-top: 15px; margin-bottom: 15px">
+	<script>
+		function goforum() {
+			location.href = '/forum.php?mod=forumdisplay&fn=' + encodeURI(document.getElementById("gofn").value);
+			return false;
+		}
+	</script>
+	<form onsubmit="return goforum()">
+		<input style="width: 25%;" id="gofn" type="text" name="fn" value="鱼妹基地">
+		<input style="width: 10%" id="go" type="submit" value="进入版块">
+		<a href="/search.php">搜索WOW8</a>
+	</form>
+</div>

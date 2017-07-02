@@ -1,0 +1,46 @@
+<!--lazy:template:default:common:header.htm-->
+
+<!--{subtemplate common/header_common}-->
+
+<meta name="application-name" content="ÏÌÓãÎÑ" />
+<meta name="msapplication-tooltip" content="ÏÌÓãÎÑ" />
+<meta name="msapplication-task" content="name=ÏÌÓãÎÑ;action-uri={echo !empty($_G['setting']['domain']['app']['forum']) ? 'http://'.$_G['setting']['domain']['app']['forum'] : $_G[siteurl].'forum.php'};icon-uri={$_G[siteurl]}{IMGDIR}/bbs.ico" />
+
+<!--{if $_G['basescript'] == 'forum' && $_G['setting']['archiver']}-->
+	<link rel="archives" title="ÏÌÓãÎÑ" href="{$_G[siteurl]}archiver/" />
+<!--{/if}-->
+
+<!--{if $_G['basescript'] == 'forum' || $_G['basescript'] == 'group'}-->
+	<script type="text/javascript" src="{$_G[setting][jspath]}forum.js?{VERHASH}"></script>
+
+<!--{elseif $_G['basescript'] == 'home' || $_G['basescript'] == 'userapp'}-->
+	<script type="text/javascript" src="{$_G[setting][jspath]}home.js?{VERHASH}"></script>
+
+<!--{elseif $_G['basescript'] == 'portal'}-->
+	<script type="text/javascript" src="{$_G[setting][jspath]}portal.js?{VERHASH}"></script>
+
+<!--{/if}-->
+
+</head>
+
+<body id="nv_{$_G[basescript]}" class="pg_{CURMODULE}" onkeydown="if(event.keyCode==27) return false;">
+	<div id="append_parent"></div><div id="ajaxwaitid"></div>
+	<!--{if empty($topic) || $topic['useheader']}-->
+		<!--{template common/-/Discuz User Header Menu Popup Function}-->
+		<div id="hd">
+			<div class="wp">
+				<div class="hdc cl">
+					<!--{eval $mnid = getcurrentnav();}-->
+					<!--ÓÃÓÚÖ§³Å¶¥²¿Í¼¸ß¶È-->
+					<h2 style="height: 260px"></h2>
+					<a href="{$_G[siteurl]}">
+						<img style="margin: 60px 0 0 50px" src="{$_G[siteurl]}{IMGDIR}/logo.png"/>
+					</a>
+					<!--{template common/header_userstatus}-->
+				</div>
+			</div>
+		</div>
+		<!--{hook/global_header}-->
+	<!--{/if}-->
+
+	<div id="wp" class="wp">

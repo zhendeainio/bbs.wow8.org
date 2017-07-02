@@ -1,0 +1,37 @@
+<!--{template common/header}-->
+<h3 class="flb">
+		<em>{lang singcere_waterfall:video} </em> &nbsp;&nbsp;<a href="forum.php?mod=viewthread&tid=$tid" target="_blank">{lang singcere_waterfall:video_enter}</a></a> <span><a href="javascript:;" onclick="hideWindow('$_GET['handlekey']'); remove_cover();" class="flbc" title="{lang close}">{lang close}</a></span>
+</h3>
+<div style="width: 500px; height: 375px">
+		$video['code']
+		<!--{if $showvideolist}-->
+		<div id="all" style="height: 95px;">
+				<!--{loop $video[img] $key $img}-->
+				<a href="javascript:;" id="video" onclick="remove_cover();hideWindow('$_GET['handlekey']'); showWindow(this.id, 'plugin.php?id=singcere_waterfall:video&tid=$_GET['tid']&pos=$key'); "><img
+						src="$img" width="128" height="95"></a>
+				<!--{/loop}-->
+		</div>
+		<!--{/if}-->
+</div>
+<script>
+	function add_cover(_null) {
+		var style = "height:" + jQuery('body').height() + "px";
+		jQuery('#append_parent').append("<div class='s_cover' style='" + style + "'></div>");
+	}
+	
+	function remove_cover() {
+		jQuery("#append_parent .s_cover").remove();
+	}
+
+	add_cover({TIMESTAMP});
+</script>
+<style>
+.s_cover {
+	width: 100%;
+	position: absolute;
+	opacity: 0.5;
+	background: #000;
+	z-index: 200;
+}
+</style>
+<!--{template common/footer}-->

@@ -1,0 +1,61 @@
+# http://www.htaccesseditor.com/
+DirectoryIndex index.php index.html index.htm
+
+######################################################################
+# DEBUG
+#Order Deny,Allow
+#Deny from all
+#Allow from 175.155.159.220
+
+# RELEASE
+Order Allow,Deny
+Allow from all
+Deny from 1.171 36.228 36.230 59.115 61.230 114.24 114.45
+######################################################################
+
+RewriteEngine On
+RewriteBase /
+# Discuz SEO 正则表达式优化(Cai)
+# RewriteRule ^forum-(\w+)-([0-9]+)\.html$ forum.php?mod=forumdisplay&fid=$1&page=$2
+# RewriteRule ^forum-(\w+)-([0-9]+)\.html\?([&=a-zA-Z0-9]+)$ forum.php?mod=forumdisplay&fid=$1&page=$2$3
+# RewriteRule ^thread-([0-9]+)-([0-9]+)-([0-9]+)\.html$ forum.php?mod=viewthread&tid=$1&extra=page=$3&page=$2
+
+# Discuz! X3.2 伪静态设置
+
+## 域名跳转（虚拟子目录、子站点等）(实现域名改写：不要在Cond中替换字符)
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^deemo$ forum.php?mod=forumdisplay&fid=571%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^soul$ forum.php?mod=forumdisplay&fid=550%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^ydwe$ forum.php?mod=forumdisplay&fid=460%1
+RewriteCond %{REQUEST_URI} ^(.ask)$
+RewriteRule ^.*$ http://tieba.github.io/common/howtoask.html
+
+## Discuz! X3.2
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^topic-(.+)\.html$ portal.php?mod=topic&topic=$1&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^article-([0-9]+)-([0-9]+)\.html$ portal.php?mod=view&aid=$1&page=$2&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^forum-(\w+)-([0-9]+)\.html$ forum.php?mod=forumdisplay&fid=$1&page=$2&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^thread-([0-9]+)-([0-9]+)-([0-9]+)\.html$ forum.php?mod=viewthread&tid=$1&extra=page\%3D$3&page=$2&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^group-([0-9]+)-([0-9]+)\.html$ forum.php?mod=group&fid=$1&page=$2&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^space-(username|uid)-(.+)\.html$ home.php?mod=space&$1=$2&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^blog-([0-9]+)-([0-9]+)\.html$ home.php?mod=space&uid=$1&do=blog&id=$2&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^archiver/(fid|tid)-([0-9]+)\.html$ archiver/index.php?action=$1&value=$2&%1
+RewriteCond %{QUERY_STRING} ^(.*)$
+RewriteRule ^([a-z]+[a-z0-9_]*)-([a-z0-9_\-]+)\.html$ plugin.php?id=$1:$2&%1
+# Redirect www to non-www
+# Copy from http://blog.csdn.net/youngqj/article/details/7355836
+RewriteCond %{HTTP_HOST} ^www\.(.*)
+RewriteRule (.*) http://%1/$1 [R=301,L]
+
+# 强制跳转Http到Https
+# RewriteCond %{HTTP:KERSSL} !on
+# RewriteRule ^(.*)$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]

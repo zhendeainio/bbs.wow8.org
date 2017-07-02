@@ -1,0 +1,181 @@
+<!--{if $_G[cache][plugin][singcere_waterfall][touch_open]}-->
+<!--{subtemplate common/header}-->
+<!--{else}-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<script src="source/plugin/singcere_waterfall/template/mobile-src/jquery-1.6.4.min.js?PnE" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/fontawesome/4.2.0/css/font-awesome.min.css">
+</head>
+<body >
+<!--{/if}-->
+
+
+<style type="text/css">
+/* list 瀑布流 */
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;text-decoration:none;}
+.clear { *zoom:1; }
+.clear:before, .clear:after { display:table; content:""; }
+.clear:after { clear:both; }
+.clearleft { *zoom:1; }
+.clearleft:before, .clearleft:after { display:table; content:""; }
+.clearleft:after { clear:left; }
+#container{width:100%; box-sizing: border-box; -webkit-box-sizing: border-box; padding: 10px 5px;}
+.water_user{color:#666;font-size:14px;line-height:18px;color:#575757;}
+.water-nav { padding: 10px 10px 0 10px; }
+.water-nav li { float: left;}
+.water-nav li a { display: block; height: 28px; line-height: 28px; padding: 0 8px; background: #F9F9F9; border-radius: 2px; margin-right: 5px; color: #999; font-size: 12px;}
+.water-nav li.spaces_cur a { background: #f78a04; color: #fff; }
+.pdp4{padding:4%;}
+.water_option{font-size:11px;padding:0;border-radius:0 0 3px 3px; position:relative;z-index:100;}
+.water_option:after{content:"";display:block;clear:both;visibility:hidden;}
+.option_item{color:#3e88cd;text-decoration:none;margin-left:10px;color:#a7a7a7;margin-bottom:10px; display:inline-block; line-height:20px;}
+.loadMeinvMOre{height:44px;line-height:44px;color:#999;text-align:center;background:#f9f9f9;display:block;clear:both;text-decoration:none;}
+.loadMeinvMOre:hover{ background:#f0f0f0;color:#666;}
+
+/* lxf-box */
+#lxf-box{position:relative;width:100%;margin:0 auto;}
+#lxf-box .item_a{width:100%;background:#fff;border-radius:3px; border-top:none;box-shadow:0 1px 2px rgba(0, 0, 0, 0.5);}
+#lxf-box .item_a a{ display:block;color:#575757;}
+#lxf-box li{position:absolute;left:0px;top:0;width:50%; box-sizing: border-box; padding:5px;}
+#lxf-box img{display:block;border:0;margin:0 auto;margin-bottom:0px;width:100%;width:100%;height:auto;border-radius:3px 3px 0 0;vertical-align:bottom;}
+/*点赞*/
+.option_item .fa{ width:22px;height:22px; display:inline-block; font-size:14px;  line-height: 22px;text-align: center;}
+.option_item.water_zan{ margin-right:0;}
+.option_item.water_zan em{  font-style: normal;}
+</style>
+
+<div class="water-nav clear">
+  <li {if empty($tagname)}class="spaces_cur"{/if}><a href="plugin.php?id=singcere_waterfall&view=all">{lang singcere_waterfall:all}</a></li>
+  <!--{loop $custom_tag_array $tag}-->
+  <li {if $tagname == $tag}class="spaces_cur"{/if}><a href="plugin.php?id=singcere_waterfall&view=tag&tagname=$tag">$tag</a></li>
+  <!--{/if}-->
+</div>
+<!--列表-->
+<div id="container" class="item-container clear">
+  <ul id="lxf-box" class="col">
+  </ul>
+  <a href="javascript:void(0)" class="loadMeinvMOre" id="loadMeinvMOre" page="1" data-surl="plugin.php?id=singcere_waterfall&view=$view&ajax_item=1&tagname=$tagname">{lang singcere_waterfall:loading_all} <i 
+
+class="fa fa-angle-down"></i></a> </div>
+<script type="text/javascript">
+	url=$("#loadMeinvMOre").attr("data-surl")+"";
+	page=parseInt($("#loadMeinvMOre").attr("page"));
+	$("#loadMeinvMOre").click(function() {
+		page=page+1;
+		loadMeinv(page,url);
+		$("#lxf-box").find("img").onload(function(){
+			liuxiaofan();
+		});
+
+	});
+	
+	
+	$(".option_item").live('click',function(){
+
+			if(!$_G['uid']){
+				window.location.href = "member.php?mod=logging"+"&action=login";
+				return;
+			}
+			tid = $(this).attr("data-tid");
+			heats=parseInt($(this).attr("data-heats"));
+			$.ajax({
+			url:"$_G[siteurl]plugin.php?id=singcere_waterfall:like&ajax=1&do=add&tid="+tid,
+			type:"GET",
+			success:function(data){	
+			data=eval("("+data+")");
+			if(data.err!=0){
+				alert(data.msg);
+				}else{
+					$("#heat"+tid).html(heats+1);
+				}
+			},
+			error:function(){
+				alert("{lang singcere_waterfall:timeout}");
+			}
+			}
+		);
+	
+
+	
+	});
+	
+	function loadMeinv(page,durl) {
+			$.ajax({
+			url:durl+"&page="+page,
+			success:function(html){	
+				$("#lxf-box").append(html);
+				
+				liuxiaofan();
+			},
+			error:function(){
+				alert("{lang singcere_waterfall:timeout}");
+			}
+			}
+		);
+		
+	}
+setInterval("liuxiaofan()",500);
+loadMeinv(1,url);
+</script>
+<script type="text/javascript">
+function liuxiaofan(){
+	var margin = 0;
+	var li=$("#lxf-box li");
+	var li_W = li[0].offsetWidth+margin;
+	var h=[];
+	var n = 2;	
+	var all_H1=0;
+	var all_H2=0;
+	for(var i = 0;i < li.length;i++) {
+		li_H = li[i].offsetHeight;
+                
+		if(i < n) {
+			h[i]=li_H;
+			li.eq(i).css("top",0);
+			li.eq(i).css("left",i * li_W);
+			if(i * li_W==0) {
+				all_H1+=li_H;
+					}else{
+					all_H2+=li_H;
+					}
+		}
+		else{
+			min_H =Math.min.apply(null,h) ;
+			minKey = getarraykey(h, min_H);
+			h[minKey] += li_H+margin ;
+			li.eq(i).css("top",min_H+margin);
+			li.eq(i).css("left",minKey * li_W);
+			if(minKey * li_W==0){
+						all_H1+=li_H;
+						}else{
+						all_H2+=li_H;
+					}
+		}	
+	}
+	all_H1=all_H1>all_H2?all_H1:all_H2;
+	$("#lxf-box").css("height",all_H1+"px");
+
+}
+
+function getarraykey(s, v) {for(k in s) {if(s[k] == v) {return k;}}}
+window.onload = function() {liuxiaofan();};
+window.onresize = function() {liuxiaofan();};
+</script>
+<!--{eval updatesession();}-->
+<!--{if defined('IN_MOBILE')}-->
+<!--{eval output();}-->
+<!--{else}-->
+<!--{eval output_preview();}-->
+<!--{/if}-->
+
+<!--{if $_G[cache][plugin][singcere_waterfall][touch_open]}-->
+<!--{subtemplate common/footer}-->
+<!--{else}-->
+</body>
+</html>
+<!--{/if}-->
+

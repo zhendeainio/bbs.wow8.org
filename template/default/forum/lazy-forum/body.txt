@@ -1,0 +1,22 @@
+catlist: array 分区列表
+	key: integer 分区ID
+	cat: array 分区
+		moderators: string? 分区版主
+		domain: string 分区地址
+		fid: integer 分区ID
+		name: string 分区名字
+		forums: array 版块ID列表
+forumlist: array 版块列表
+	forum: array 版块
+		name: 版块名字
+		domain: string 版块地址
+		icon: string 版块图标地址
+		todayposts: integer 今日发帖量
+		lastpost: array 最后一次发表的帖子
+			author: string 作者
+			dateline: string? 时间
+		redirect: string 跳转地址
+		description: string 描述
+		subforums: string? 子版块
+		moderators: string? 版主
+		fid: integer 版块ID

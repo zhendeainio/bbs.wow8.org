@@ -1,0 +1,44 @@
+<!--lazy:template:default:common:header_common.htm-->
+
+<!DOCTYPE html><html><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
+<title><!--{if !empty($navtitle)}-->$navtitle<!--{/if}--><!--{if empty($nobbname)}--> | $_G['setting']['bbname']<!--{/if}--></title>
+<meta name="keywords" content="WOW8,咸鱼窝" />
+<meta name="description" content="我们不光拯救世界，我们还卖萌。" />
+<meta name="generator" content="Discuz! X3.2 (Modified by WOW8)" />
+<meta name="author" content="Discuz! Team and Comsenz UI Team & WOW8" />
+<meta name="copyright" content="2001-2017 Comsenz Inc. & WOW8" />
+<meta name="MSSmartTagsPreventParsing" content="True" />
+<meta http-equiv="MSThemeCompatible" content="Yes" />
+<base href="{$_G['siteurl']}" />
+
+<!--{csstemplate}-->
+
+<script type="text/javascript">
+	var STYLEID = '{STYLEID}',
+	STATICURL = '{STATICURL}',
+	IMGDIR = '{IMGDIR}',
+	VERHASH = '{VERHASH}',
+	charset = '{CHARSET}',
+	discuz_uid = '$_G[uid]',
+	cookiepre = '{$_G[config][cookie][cookiepre]}',
+	cookiedomain = '{$_G[config][cookie][cookiedomain]}',
+	cookiepath = '{$_G[config][cookie][cookiepath]}',
+	showusercard = '{$_G[setting][showusercard]}',
+	attackevasive = '{$_G[config][security][attackevasive]}',
+	disallowfloat = '{$_G[setting][disallowfloat]}',
+	creditnotice = '<!--{if $_G['setting']['creditnotice']}-->$_G['setting']['creditnames']<!--{/if}-->',
+	defaultstyle = '$_G[style][defaultextstyle]',
+	REPORTURL = '$_G[currenturl_encode]',
+	SITEURL = '$_G[siteurl]',
+	JSPATH = '$_G[setting][jspath]',
+	CSSPATH = '$_G[setting][csspath]',
+	DYNAMICURL = '$_G[dynamicurl]';
+</script>
+<script type="text/javascript" src="static/js/common.js?{VERHASH}"></script>
+<script type="text/javascript" src="static/js/google-analytics.js"></script>
+
+<!--{if empty($_GET['diy'])}--><!--{eval $_GET['diy'] = '';}--><!--{/if}-->
+
+<!--{if !isset($topic)}--><!--{eval $topic = array();}--><!--{/if}-->

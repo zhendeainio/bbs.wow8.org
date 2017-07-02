@@ -1,0 +1,27 @@
+{eval
+    $opts = array(
+        'http' => array(
+            'header' =>
+                "User-Agent: WOW8 Website"
+        )
+    );
+    $context = stream_context_create($opts);
+    $file = file_get_contents('http://wow9.org/portal/?interface_get_archive_4', false, $context);
+}
+<!--{if $file}-->
+    <div id="Wow9Archive">
+    </div>
+    <script>
+        Wow9ArchiveJsonData = {$file};
+
+        Wow9Archive = $("Wow9Archive");
+        for (var i = 0; i <= 3; i++) {
+            var data = Wow9ArchiveJsonData[i];
+
+            var appendHTML = "<a href='" + data['link'] + "'>"
+                            + "<div class='cover'><img title='" + data['title'] + "' width='235' height='134' src='" + data['cover'] + "'></div>";
+                            + "</a>";
+            Wow9Archive.innerHTML += appendHTML;
+        }
+    </script>
+<!--{/if}-->

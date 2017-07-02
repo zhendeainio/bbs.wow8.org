@@ -1,0 +1,25 @@
+<!--lazy:template:default:common:header_userstatus.htm-->
+<!--{if $_G['uid']}-->
+	<!--{template common/-/Discuz User Header Menu}-->
+<!--{elseif !empty($_G['cookie']['loginuser'])}-->
+	<p>
+		<strong><a id="loginuser" class="noborder"><!--{echo dhtmlspecialchars($_G['cookie']['loginuser'])}--></a></strong>
+		<span class="pipe">|</span><a href="member.php?mod=logging&action=login" onclick="showWindow('login', this.href)">{lang activation}</a>
+		<span class="pipe">|</span><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+	</p>
+<!--{elseif !$_G[connectguest]}-->
+	<!--{template common/-/Discuz Guest Header Menu}-->
+<!--{else}-->
+	<div id="um">
+		<div class="avt y"><!--{avatar(0,small)}--></div>
+		<p>
+			<strong class="vwmy qq">{$_G[member][username]}</strong>
+			<!--{hook/global_usernav_extra1}-->
+			<span class="pipe">|</span><a href="member.php?mod=logging&action=logout&formhash={FORMHASH}">{lang logout}</a>
+		</p>
+		<p>
+			<a href="home.php?mod=spacecp&ac=credit&showcredit=1">{lang credits}: 0</a>
+			<span class="pipe">|</span>{lang usergroup}: $_G[group][grouptitle]
+		</p>
+	</div>
+<!--{/if}-->

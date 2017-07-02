@@ -1,0 +1,29 @@
+<td class="fl_icn" style="text-align: center; width: 33%;">
+<!--{if $forum[icon]}-->
+    {eval $forum_icon_output_path = $forum[icon]}
+    {eval $forum_icon_output_path = str_replace('align="left"', 'align="center"', $forum_icon_output_path)}
+    {eval $forum_icon_output_path = str_replace('</a>', '<br/>' . $forum['name'] . '</a>', $forum_icon_output_path)}
+    $forum_icon_output_path
+<!--{else}-->
+    <a href="$forumurl"{if $forum[redirect]} target="_blank"{/if}><img src="{IMGDIR}/forum{if $forum[folder]}_new{/if}.gif" /><br/>$forum[name]</a>
+<!--{/if}-->
+</td>
+<!--{if count($forum['threadlist']) > 0}-->
+    <td>
+        <table width="100%" class="recent-thread-table">
+            <!--{eval $threadlist_count = 0}-->
+            <!--{loop $forum['threadlist'] $key $value}-->
+                <tr>
+                    <td>
+                        <a href="/forum.php?mod=viewthread&tid=$key"><big>$value[subject]</big></a>
+                    </td>
+                    <td class="center" width="25%">
+                        $value[lastposter]
+                        <br/><b>{echo dgmdate($value[lastpost], 'u', '9999', getglobal('setting/dateformat'))}</b>
+                    </td>
+                </tr>
+                <!--{eval if (++$threadlist_count == 5) break}-->
+            <!--{/loop}-->
+        </table>
+    </td>
+<!--{/if}-->

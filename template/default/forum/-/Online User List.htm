@@ -1,0 +1,21 @@
+<!--{if empty($gid) && $_G['setting']['whosonlinestatus']}-->
+<div id="online" class="bm oll" style="margin-top: 5px">
+    <!--{if $_G['setting']['whosonlinestatus'] && $detailstatus}-->
+    <dl id="onlinelist" class="bm_c">
+        <!--{if $detailstatus}-->
+        <dd class="ptm pbm">
+            <ul class="cl online-avatar">
+                <!--{if $whosonline}-->
+                <!--{loop $whosonline $key $online}-->
+                <a href="home.php?mod=space&uid=$online[uid]" title="$online[username]"><!--{avatar($online[uid],small)}--></a>
+                <!--{/loop}-->
+                <!--{else}-->
+                <li style="width: auto">{lang online_only_guests}</li>
+                <!--{/if}-->
+            </ul>
+        </dd>
+        <!--{/if}-->
+    </dl>
+    <!--{/if}-->
+</div>
+<!--{/if}-->

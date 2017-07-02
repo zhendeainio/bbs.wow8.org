@@ -1,0 +1,28 @@
+<div class="fl bm" style="margin-top: 15px">
+    <div class="bm bmw cl">
+        <div class="bm_h cl">
+            <h2>Õ¾ƒÈ¶¯Ì¬</h2>
+        </div>
+    </div>
+    <div class="bm_c">
+        <table class="recent-reply" width="100%">
+            <!--{loop $forum_last_posts $pid $post}-->
+            <!--{eval $thread = $forum_last_posts_threads[$post[tid]]}-->
+            <!--{eval $fid = $thread[fid]}-->
+            <!--{eval $forum_name = $forum_last_posts_forums[$fid][name]}-->
+            <!--{eval $replier = $post[author]}-->
+            <tr>
+                <td style="width: 20%; text-align: center">
+                    <a href="/forum.php?mod=forumdisplay&fid=$fid">$forum_name</a>
+                </td>
+                <td>
+                    <a href="/forum.php?mod=viewthread&tid=$thread[tid]"><big>$thread[subject]</big></a>
+                </td>
+                <td style="width: 20%; text-align: center">
+                    $replier<br/><b>{echo dgmdate($post[dateline], 'u', '9999', getglobal('setting/dateformat'))}</b>
+                </td>
+            </tr>
+            <!--{/loop}-->
+        </table>
+    </div>
+</div>

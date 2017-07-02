@@ -1,0 +1,12 @@
+<!--{if $data[$view]['threadcount']}-->
+<!--{loop $data[$view]['threadlist'] $thread}-->
+
+<li class="item">
+  <div class="item_a">
+    <div> <a href="forum.php?mod=viewthread&tid=$thread[tid]"><img src="$thread[coverpath]" alt="$thread[subject]" /></a> </div>
+    <div class="water_user pdp4"> <a href="forum.php?mod=viewthread&tid=$thread[tid]">$thread[subject]</a></div>
+    <div class="water_option"> <span class="option_item"><i class="fa fa-eye"></i>{$thread['views']}</span> <span href="" class="option_item"><i class="fa fa-heart"></i>{$thread['favtimes']}</span> <span class="option_item water_zan" data-heats="$thread[heats]" data-tid="{$thread[tid]}"><i class="fa fa-thumbs-o-up"></i><em id="heat{$thread[tid]}">{$thread[heats]}</em></span> </div>
+  </div>
+</li>
+<!--{/loop}-->
+<!--{/if}-->
