@@ -5,16 +5,19 @@
         </div>
     </div>
     <div class="bm_c">
-        <div style="padding-top: 5px"></div>
+        <div class="pt5"></div>
         <!--{loop $forum_last_posts $pid $post}-->
         <!--{eval $thread = $forum_last_posts_threads[$post[tid]]}-->
         <!--{eval $fid = $thread[fid]}-->
         <!--{eval $forum_name = $forum_last_posts_forums[$fid][name]}-->
         <!--{eval $replier = $post[author]}-->
         <!--{eval $message = $post[message]}-->
-        <div style="padding-top: 5px; padding-bottom: 10px">
+        <!--{if strlen($message) > 200}-->
+        <!--{eval $message = substr($message, 0, 197) . '...'}-->
+        <!--{/if}-->
+        <div class="lp">
             <div>[<b><a href="/forum.php?mod=forumdisplay&fid=$fid">$forum_name</a></b>]<a href="/forum.php?mod=viewthread&tid=$thread[tid]">$thread[subject]</a> @ $replier <b>{echo dgmdate($post[dateline], 'u', '9999', getglobal('setting/dateformat'))}</b></div>
-            <div style="padding-top: 5px">$message</div>
+            <div class="pt5">$message</div>
         </div>
         <!--{/loop}-->
     </div>

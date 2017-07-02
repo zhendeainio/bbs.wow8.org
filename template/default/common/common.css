@@ -1879,6 +1879,15 @@ DIYÍ¼Æ¬»ÃµÆÆ¬Î´¼ÓÔØÊ±Òþ²Ø,Ä£¿é±êÊ¶Òþ²Ø
             border-bottom-style: solid;
         }
 
+		.bm_c .lp {
+			padding-top: 5px;
+			padding-bottom: 10px;
+		}
+
+		.lp .pt5 {
+			padding-top: 5px;
+		}
+
 		table.recent-thread-table tr td {
 			border-style: hidden;
 			padding: 5px 10px;
