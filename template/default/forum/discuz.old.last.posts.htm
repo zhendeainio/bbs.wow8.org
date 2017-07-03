@@ -15,7 +15,7 @@
         <!--{eval $message = $post[message]}-->
         <!--{eval $first = $post[first]}-->
         <!--{if strlen($message) > 200}-->
-        <!--{eval $message = substr($message, 0, 197) . '...'}-->
+        <!--{eval $message = cutstr($message, 200)}-->
         <!--{/if}-->
         <div>
             <a href="/?$replierId"><!--{avatar($replierId,small)}--></a>
