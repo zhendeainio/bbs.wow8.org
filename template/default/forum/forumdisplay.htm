@@ -20,21 +20,7 @@
 	<!--[diy=diy1]--><div id="diy1" class="area"></div><!--[/diy]-->
 </div>
 <div class="boardnav">
-	<div id="ct" class="wp cl{if $_G['forum']['allowside']} ct2{/if}"{if $leftside && !$noCat} style="margin-left:{$_G['leftsidewidth_mwidth']}px"{/if}>
-		<!--{if $leftside && !$noCat}-->
-			<div id="sd_bdl" class="bdl" onmouseover="showMenu({'ctrlid':this.id, 'pos':'dz'});" style="width:{$_G['setting']['leftsidewidth']}px;margin-left:-{$_G['leftsidewidth_mwidth']}px">
-				<!--{hook/forumdisplay_leftside_top}-->
-				<!--[diy=diyleftsidetop]--><div id="diyleftsidetop" class="area"></div><!--[/diy]-->
-
-				<div class="tbn" id="forumleftside">
-					<!--{subtemplate forum/forumdisplay_leftside}-->
-				</div>
-
-				<!--[diy=diyleftsidebottom]--><div id="diyleftsidebottom" class="area"></div><!--[/diy]-->
-				<!--{hook/forumdisplay_leftside_bottom}-->
-			</div>
-		<!--{/if}-->
-
+	<div id="ct" class="wp cl">
 		<div class="mn">
 			<div class="bm bml pbn">
 				<!--{if $_G[forum][banner] && !$subforumonly}--><img src="$_G[forum][banner]" alt="$_G['forum'][name]" /><!--{/if}-->
