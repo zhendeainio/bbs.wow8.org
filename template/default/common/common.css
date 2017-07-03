@@ -1884,14 +1884,23 @@ DIYÍ¼Æ¬»ÃµÆÆ¬Î´¼ÓÔØÊ±Òþ²Ø,Ä£¿é±êÊ¶Òþ²Ø
 			padding-bottom: 10px;
 		}
 
-		.lp div:nth-of-type(2) {
-			padding-top: 5px;
+		.pt5 {
+			padding-top: 10px;
 		}
 
-		.lp img {
+		.fl.bm .bm_c div:not(.pt5) {
+			padding: 5px;
+		}
+
+		.fl.bm .bm_c div:nth-last-child(1) {
+			padding-bottom: 10px;
+		}
+
+		.fl.bm .bm_c div:not(.pt5) img {
 			float: left;
 			padding-right: 5px;
 			border-radius: 50px;
+			padding-bottom: 5px;
 		}
 
 		table.recent-thread-table tr td {

@@ -171,8 +171,8 @@ class table_forum_post extends discuz_table
 		return DB::fetch_all('SELECT * FROM %t ORDER BY dateline DESC LIMIT '.$limit, array(self::get_tablename($tableid)));
 	}
 
-	public function fetch_last_visible_posts($tableid, $limit = 5) {
-		return DB::fetch_all('SELECT * FROM %t WHERE invisible = 0 ORDER BY dateline DESC LIMIT '.$limit, array(self::get_tablename($tableid)));
+	public function fetch_last_visible_posts($tableid, $start = 0, $limit = 5) {
+		return DB::fetch_all('SELECT * FROM %t WHERE invisible = 0 ORDER BY dateline DESC LIMIT '.$start.','.$limit, array(self::get_tablename($tableid)));
 	}
 
 	public function fetch_by_pid_condition($tableid, $pid, $addcondiction = '', $fields = '*') {

@@ -17,11 +17,17 @@
         <!--{if strlen($message) > 200}-->
         <!--{eval $message = substr($message, 0, 197) . '...'}-->
         <!--{/if}-->
-        <div class="lp">
+        <div>
             <a href="/?$replierId"><!--{avatar($replierId,small)}--></a>
             <div><!--{if $first}-->[<b>New!</b>]<!--{/if}-->[<b><a href="/forum.php?mod=forumdisplay&fid=$fid">$forum_name</a></b>]<a href="/forum.php?mod=viewthread&tid=$thread[tid]">$thread[subject]</a> <a href="/?$replierId">@$replier</a> <b>{echo dgmdate($post[dateline], 'u', '9999', getglobal('setting/dateformat'))}</b></div>
             <div>$message</div>
         </div>
         <!--{/loop}-->
+        <div>
+        <!--{if $page > 1}-->
+            <button onclick="window.location.href='/forum.php?page={echo $page-1}'">上一页</button>
+        <!--{/if}-->
+            <button onclick="window.location.href='/forum.php?page={echo $page+1}'">下一页</button>
+        </div>
     </div>
 </div>
