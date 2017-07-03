@@ -11,6 +11,19 @@ if(!defined('IN_DISCUZ')) {
 	exit('Access Denied');
 }
 
+function get_wow8_github_commits() {
+	$github_commit_json = file_get_contents('https://api.github.com/repos/lazyknightx/bbs.wow8.org/commits?per_page=5');
+	$github_commit_objects = json_decode($github_commit_json);
+	$github_commit_output = '';
+	for ($github_commit_index = 0; $github_commit_index < 5; $github_commit_index++) {
+		$github_commit_object = $github_commit_objects[$github_commit_index];
+		$author = $github_commit_object->{'commit'}->{'author'}->{'name'};
+		$message = iconv('utf8', 'gbk', $github_commit_object->{'commit'}->{'message'});
+		$github_commit_output .= '<p>'.$author.': '.$message.'</p>';
+	}
+	return $github_commit_output;
+}
+
 function discuz_uc_avatar($uid, $size = '', $returnsrc = FALSE) {
 	global $_G;
 	return avatar($uid, $size, $returnsrc, FALSE, $_G['setting']['avatarmethod'], $_G['setting']['ucenterurl']);
