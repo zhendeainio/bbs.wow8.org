@@ -1879,7 +1879,7 @@ DIYÍ¼Æ¬»ÃµÆÆ¬Î´¼ÓÔØÊ±Òþ²Ø,Ä£¿é±êÊ¶Òþ²Ø
             border-bottom-style: solid;
         }
 
-		.bm_c .lp {
+		.bm_c > .lp {
 			padding-top: 5px;
 			padding-bottom: 10px;
 		}
@@ -1888,15 +1888,16 @@ DIYÍ¼Æ¬»ÃµÆÆ¬Î´¼ÓÔØÊ±Òþ²Ø,Ä£¿é±êÊ¶Òþ²Ø
 			padding-top: 10px;
 		}
 
-		.fl.bm .bm_c div:not(.pt5) {
+		.fl.bm > .bm_c > div:not(.pt5) {
 			padding: 5px;
+			clear: left;
 		}
 
-		.fl.bm .bm_c div:nth-last-child(1) {
+		.fl.bm > .bm_c > div:nth-last-child(1) {
 			padding-bottom: 10px;
 		}
 
-		.fl.bm .bm_c div:not(.pt5) img {
+		.fl.bm > .bm_c > div:not(.pt5) > a > img {
 			float: left;
 			padding-right: 5px;
 			border-radius: 50px;
